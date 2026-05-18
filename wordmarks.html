@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@200;300;400&family=Bebas+Neue&family=Rajdhani:wght@300;400;600&family=Space+Mono:wght@400;700&family=Josefin+Sans:wght@100;200;300&family=Cinzel:wght@400;600&family=Syncopate:wght@400;700&family=Libre+Baskerville:ital,wght@0,400;1,400&family=Epilogue:wght@100;200;300;800&family=Unbounded:wght@200;300&family=Italiana&family=Antonio:wght@100;300&family=Barlow+Condensed:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #0a0a0a; color: #fff; font-family: sans-serif; padding: 40px 20px; }
+.section { margin-bottom: 60px; }
+.section-label { font-family: 'DM Sans', sans-serif; font-size: 10px; letter-spacing: 6px; text-transform: uppercase; color: #444; border-bottom: 1px solid #1a1a1a; padding-bottom: 12px; margin-bottom: 32px; }
+.options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+.option { padding: 36px 28px; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; min-height: 120px; position: relative; }
+.option-num { position: absolute; top: 10px; right: 14px; font-family: 'DM Sans', sans-serif; font-size: 9px; letter-spacing: 2px; opacity: 0.3; }
+
+.mh-a { background: #f5f0e8; }
+.mh-a .wordmark { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: 38px; letter-spacing: 6px; color: #1a1a1a; text-transform: lowercase; }
+.mh-a .sub { font-family: 'DM Sans', sans-serif; font-weight: 200; font-size: 8px; letter-spacing: 5px; color: #888; text-transform: uppercase; margin-top: 6px; }
+
+.mh-b { background: #111; }
+.mh-b .wordmark { font-family: 'Barlow Condensed', sans-serif; font-weight: 200; font-size: 52px; letter-spacing: 14px; color: #e8e8e8; text-transform: uppercase; }
+.mh-b .sub { font-family: 'DM Sans', sans-serif; font-weight: 200; font-size: 8px; letter-spacing: 5px; color: #555; text-transform: uppercase; margin-top: 4px; }
+
+.mh-c { background: #1c1a18; }
+.mh-c .wordmark { font-family: 'Libre Baskerville', serif; font-style: italic; font-weight: 400; font-size: 30px; letter-spacing: 2px; color: #d4c5a9; }
+.mh-c .accent { width: 40px; height: 1px; background: #c4a882; margin-bottom: 10px; }
+
+.mh-d { background: #0d0d0d; }
+.mh-d .wordmark { font-family: 'Epilogue', sans-serif; font-weight: 100; font-size: 28px; letter-spacing: 12px; color: #fff; text-transform: uppercase; }
+.mh-d .sub { font-family: 'Epilogue', sans-serif; font-weight: 100; font-size: 8px; letter-spacing: 4px; color: #555; text-transform: uppercase; margin-top: 8px; }
+
+.vw-a { background: #000; }
+.vw-a .wordmark { font-family: 'Space Mono', monospace; font-weight: 400; font-size: 30px; letter-spacing: 4px; color: #fff; text-transform: lowercase; position: relative; display: inline-block; }
+.vw-a .wordmark::before { content: 'vwlsnds'; position: absolute; left: -2px; top: 0; color: #ff2d55; opacity: 0.7; clip-path: inset(30% 0 40% 0); }
+.vw-a .wordmark::after { content: 'vwlsnds'; position: absolute; left: 2px; top: 0; color: #00e5ff; opacity: 0.7; clip-path: inset(55% 0 10% 0); }
+
+.vw-b { background: #f0ebff; }
+.vw-b .wordmark { font-family: 'Unbounded', sans-serif; font-weight: 200; font-size: 22px; letter-spacing: 3px; color: #2a0a4a; text-transform: lowercase; }
+.vw-b .pill { display: inline-block; background: linear-gradient(135deg, #ff6eb4, #a78bfa); height: 3px; width: 60px; margin-top: 8px; border-radius: 2px; }
+
+.vw-c { background: #0a0a1a; }
+.vw-c .wordmark { font-family: 'Rajdhani', sans-serif; font-weight: 600; font-size: 40px; letter-spacing: 8px; text-transform: uppercase; background: linear-gradient(90deg, #00ffcc, #a78bfa, #ff6eb4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+.vw-d { background: #fff; }
+.vw-d .wordmark { font-family: 'Josefin Sans', sans-serif; font-weight: 100; font-size: 32px; letter-spacing: 8px; color: #111; text-transform: lowercase; }
+.vw-d .dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: #ff2d55; margin-left: 4px; vertical-align: middle; }
+
+.sts-a { background: #050810; grid-column: 1 / -1; min-height: 140px; }
+.sts-a .wordmark { font-family: 'Cinzel', serif; font-weight: 400; font-size: 26px; letter-spacing: 10px; color: #c8b98a; text-transform: uppercase; }
+.sts-a .wordmark span { color: #fff; }
+.sts-a .sub { font-family: 'DM Sans', sans-serif; font-weight: 200; font-size: 8px; letter-spacing: 6px; color: #3a4060; text-transform: uppercase; margin-top: 8px; }
+.sts-a .rule { width: 100%; max-width: 300px; height: 1px; background: linear-gradient(90deg, #c8b98a, transparent); margin-bottom: 12px; }
+
+.sts-b { background: #000; grid-column: 1 / -1; min-height: 140px; }
+.sts-b .wordmark-top { font-family: 'Antonio', sans-serif; font-weight: 100; font-size: 13px; letter-spacing: 12px; color: #666; text-transform: uppercase; margin-bottom: 4px; }
+.sts-b .wordmark-main { font-family: 'Antonio', sans-serif; font-weight: 300; font-size: 58px; letter-spacing: 6px; color: #fff; text-transform: uppercase; line-height: 1; }
+.sts-b .wordmark-main span { color: #e63946; }
+
+.sts-c { background: #fafaf8; }
+.sts-c .wordmark { font-family: 'Italiana', serif; font-size: 28px; letter-spacing: 1px; color: #1a1a1a; }
+.sts-c .sub { font-family: 'DM Sans', sans-serif; font-weight: 300; font-size: 8px; letter-spacing: 4px; color: #999; text-transform: uppercase; margin-top: 6px; }
+
+.sts-d { background: #111; }
+.sts-d .wordmark { font-family: 'DM Sans', sans-serif; font-weight: 200; font-size: 13px; letter-spacing: 5px; color: #888; text-transform: lowercase; }
+.sts-d .wordmark em { color: #ccc; font-style: normal; }
+</style>
+</head>
+<body>
+
+<div class="section">
+  <div class="section-label">mike hamilton — 4 options</div>
+  <div class="options-grid">
+    <div class="option mh-a"><span class="option-num">A</span><div class="wordmark">mike hamilton</div><div class="sub">songwriter · producer</div></div>
+    <div class="option mh-b"><span class="option-num">B</span><div class="wordmark">mike hamilton</div><div class="sub">songwriter · producer</div></div>
+    <div class="option mh-c"><span class="option-num">C</span><div class="accent"></div><div class="wordmark">Mike Hamilton</div></div>
+    <div class="option mh-d"><span class="option-num">D</span><div class="wordmark">mike hamilton</div><div class="sub">· · ·</div></div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-label">vwlsnds — 4 options</div>
+  <div class="options-grid">
+    <div class="option vw-a"><span class="option-num">A</span><div class="wordmark">vwlsnds</div></div>
+    <div class="option vw-b"><span class="option-num">B</span><div class="wordmark">vwlsnds</div><div class="pill"></div></div>
+    <div class="option vw-c"><span class="option-num">C</span><div class="wordmark">vwlsnds</div></div>
+    <div class="option vw-d"><span class="option-num">D</span><div class="wordmark">vwlsnds<span class="dot"></span></div></div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-label">soundtrack to something — 4 options</div>
+  <div class="options-grid">
+    <div class="option sts-a"><span class="option-num">A — cinematic lean-in</span><div class="rule"></div><div class="wordmark"><span>SOUNDTRACK</span> TO SOMETHING</div><div class="sub">original music for film & media</div></div>
+    <div class="option sts-b"><span class="option-num">B — cinematic lean-in</span><div class="wordmark-top">original scores</div><div class="wordmark-main">SOUND<span>TRACK</span></div></div>
+    <div class="option sts-c"><span class="option-num">C — understated</span><div class="wordmark">Soundtrack to Something</div><div class="sub">music for film & media</div></div>
+    <div class="option sts-d"><span class="option-num">D — understated</span><div class="wordmark"><em>soundtrack</em> to something</div></div>
+  </div>
+</div>
+
+</body>
+</html>
