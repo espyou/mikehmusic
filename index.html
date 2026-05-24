@@ -132,6 +132,92 @@
     animation: scrollPulse 2s ease-in-out 2.5s infinite;
   }
 
+  /* ── UPCOMING RELEASES ── */
+  .upcoming {
+    padding: 80px 80px 100px;
+    border-top: 1px solid #141414;
+  }
+
+  .upcoming-label {
+    font-family: 'Epilogue', sans-serif;
+    font-weight: 100;
+    font-size: clamp(22px, 3vw, 36px);
+    letter-spacing: clamp(6px, 1.5vw, 16px);
+    color: var(--off-white);
+    text-transform: uppercase;
+    margin-bottom: 48px;
+  }
+
+  .upcoming-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 24px;
+  }
+
+  .release-card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .release-date {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: #888;
+    text-transform: uppercase;
+  }
+
+  .release-thumb {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.3s ease;
+  }
+
+  .release-thumb:hover { opacity: 0.75; }
+
+  .release-info {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .release-artist {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    color: var(--off-white);
+    text-transform: lowercase;
+    transition: color 0.3s;
+  }
+
+  .release-title {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 200;
+    letter-spacing: 1px;
+    color: #444;
+    text-transform: lowercase;
+    font-style: italic;
+    transition: color 0.3s;
+  }
+
+  .release-info:hover .release-artist { color: #aaa; }
+  .release-info:hover .release-title { color: #666; }
+
+  @media (max-width: 1024px) {
+    .upcoming-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  @media (max-width: 768px) {
+    .upcoming { padding: 60px 32px 80px; }
+    .upcoming-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  }
+
   /* ── ALIASES SECTION ── */
   .aliases {
     padding: 0 0 120px;
@@ -454,6 +540,80 @@
   <div class="scroll-hint">
     <span>explore</span>
     <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- UPCOMING RELEASES -->
+<section class="upcoming">
+  <div class="upcoming-label">Upcoming Releases</div>
+  <div class="upcoming-grid">
+
+    <div class="release-card">
+      <div class="release-date">Fri May 29</div>
+      <a href="https://ffm.to/s2sstillness" target="_blank" rel="noopener">
+        <img src="images/stillness.gif" alt="Stillness is the Ultimate Luxury" class="release-thumb">
+      </a>
+      <a href="https://ffm.to/s2sstillness" target="_blank" rel="noopener" class="release-info">
+        <div class="release-artist">Soundtrack to Something</div>
+        <div class="release-title">Music from the Film "Stillness is the Ultimate Luxury"</div>
+      </a>
+    </div>
+
+    <div class="release-card">
+      <div class="release-date">Fri June 5</div>
+      <a href="https://ffm.to/mhclarity" target="_blank" rel="noopener">
+        <img src="images/clarity_option_a.png" alt="Clarity" class="release-thumb">
+      </a>
+      <a href="https://ffm.to/mhclarity" target="_blank" rel="noopener" class="release-info">
+        <div class="release-artist">Mike Hamilton feat. Will Cody</div>
+        <div class="release-title">Clarity</div>
+      </a>
+    </div>
+
+    <div class="release-card">
+      <div class="release-date">Fri June 12</div>
+      <a href="https://ffm.to/mhilym" target="_blank" rel="noopener">
+        <img src="images/ILYM_cover_v1_minimalist.jpg" alt="ILYM" class="release-thumb">
+      </a>
+      <a href="https://ffm.to/mhilym" target="_blank" rel="noopener" class="release-info">
+        <div class="release-artist">Mike Hamilton feat. Rowen + Eric Gibbons</div>
+        <div class="release-title">ILYM</div>
+      </a>
+    </div>
+
+    <div class="release-card">
+      <div class="release-date">Fri June 19</div>
+      <a href="https://ffm.to/terence" target="_blank" rel="noopener">
+        <img src="images/to_terence_cover.png" alt="To Terence" class="release-thumb">
+      </a>
+      <a href="https://ffm.to/terence" target="_blank" rel="noopener" class="release-info">
+        <div class="release-artist">Mike Hamilton</div>
+        <div class="release-title">To Terence</div>
+      </a>
+    </div>
+
+    <div class="release-card">
+      <div class="release-date">Fri July 3</div>
+      <a href="https://ffm.to/deafeningsound" target="_blank" rel="noopener">
+        <img src="images/a_deafening_sound_b3.png" alt="Deafening Sound" class="release-thumb">
+      </a>
+      <a href="https://ffm.to/deafeningsound" target="_blank" rel="noopener" class="release-info">
+        <div class="release-artist">Mike Hamilton (prod. by Andy Guarnera)</div>
+        <div class="release-title">Deafening Sound</div>
+      </a>
+    </div>
+
+    <div class="release-card">
+      <div class="release-date">Fri July 10</div>
+      <a href="https://ffm.to/mhyba" target="_blank" rel="noopener">
+        <img src="images/your_bad_advice_cover.png" alt="Your Bad Advice" class="release-thumb">
+      </a>
+      <a href="https://ffm.to/mhyba" target="_blank" rel="noopener" class="release-info">
+        <div class="release-artist">Mike Hamilton</div>
+        <div class="release-title">Your Bad Advice</div>
+      </a>
+    </div>
+
   </div>
 </section>
 
