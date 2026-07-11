@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Downloads — Mike Hamilton Music</title>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@100;200;300;800;900&family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Space+Mono:wght@400;700&family=DM+Sans:wght@200;300;400&family=Barlow+Condensed:wght@200;300&family=Josefin+Sans:wght@100;200;300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #080808;
+    --off-white: #f0ece4;
+    --dim: #555;
+    --grain-opacity: 0.035;
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--off-white);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+    cursor: none;
+    min-height: 100vh;
+  }
+
+  /* Custom cursor */
+  .cursor {
+    width: 8px; height: 8px;
+    background: var(--off-white);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s, width 0.2s, height 0.2s, opacity 0.2s;
+    mix-blend-mode: difference;
+  }
+  .cursor-ring {
+    width: 32px; height: 32px;
+    border: 1px solid rgba(240,236,228,0.4);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: transform 0.18s ease-out, width 0.2s, height 0.2s, border-color 0.2s;
+    mix-blend-mode: difference;
+  }
+
+  /* Grain overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+    opacity: var(--grain-opacity);
+    pointer-events: none;
+    z-index: 1000;
+  }
+
+  /* Header */
+  .page-header {
+    padding: 80px 80px 40px;
+    border-bottom: 1px solid #141414;
+  }
+
+  .back-link {
+    display: inline-block;
+    font-family: 'Epilogue', sans-serif;
+    font-weight: 100;
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--dim);
+    text-decoration: none;
+    margin-bottom: 40px;
+    transition: color 0.2s;
+  }
+  .back-link:hover { color: var(--off-white); }
+  .back-link::before { content: '← '; }
+
+  .page-title {
+    font-family: 'Epilogue', sans-serif;
+    font-weight: 100;
+    font-size: 11px;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    color: var(--off-white);
+  }
+
+  .page-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 13px;
+    color: var(--dim);
+    margin-top: 10px;
+    letter-spacing: 1px;
+  }
+
+  /* Downloads list */
+  .downloads-list {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 60px 80px;
+  }
+
+  .download-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 28px 0;
+    border-bottom: 1px solid #141414;
+    gap: 20px;
+  }
+
+  .download-item:first-child {
+    border-top: 1px solid #141414;
+  }
+
+  .download-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .download-title {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    color: var(--off-white);
+    letter-spacing: 0.5px;
+  }
+
+  .download-meta {
+    font-family: 'Epilogue', sans-serif;
+    font-weight: 200;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--dim);
+  }
+
+  .download-btn {
+    display: inline-block;
+    font-family: 'Epilogue', sans-serif;
+    font-weight: 200;
+    font-size: 9px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--dim);
+    text-decoration: none;
+    border: 1px solid #1e1e1e;
+    padding: 10px 20px;
+    white-space: nowrap;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .download-btn:hover {
+    color: var(--off-white);
+    border-color: #333;
+  }
+
+  /* Footer */
+  footer {
+    border-top: 1px solid #141414;
+    padding: 40px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  footer .f-name {
+    font-family: 'Epilogue', sans-serif;
+    font-weight: 100;
+    font-size: 11px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: #2a2a2a;
+  }
+
+  footer .f-copy {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: #222;
+  }
+
+  @media (max-width: 768px) {
+    .page-header { padding: 60px 32px 32px; }
+    .downloads-list { padding: 40px 32px; }
+    .download-item { flex-direction: column; align-items: flex-start; gap: 16px; }
+    footer { padding: 32px; flex-direction: column; gap: 12px; text-align: center; }
+    .cursor, .cursor-ring { display: none; }
+    body { cursor: auto; }
+  }
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<header class="page-header">
+  <a href="../" class="back-link">Mike Hamilton Music</a>
+  <div class="page-title">Downloads</div>
+  <div class="page-subtitle">Free MP3s — no signup required</div>
+</header>
+
+<main class="downloads-list">
+
+  <!-- DOWNLOAD ITEMS — add new ones here -->
+
+  <!-- Example entry (uncomment and edit when adding a file):
+  <div class="download-item">
+    <div class="download-info">
+      <div class="download-title">Song Title</div>
+      <div class="download-meta">Artist Name &mdash; 2025</div>
+    </div>
+    <a href="files/filename.mp3" download class="download-btn">Download</a>
+  </div>
+  -->
+
+</main>
+
+<footer>
+  <div class="f-name">Mike Hamilton Music</div>
+  <div class="f-copy">© 2025 Mike Hamilton. All rights reserved.</div>
+</footer>
+
+<script>
+  const cursor = document.getElementById('cursor');
+  const ring = document.getElementById('cursorRing');
+  let mx = 0, my = 0, rx = 0, ry = 0;
+  document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+  function animateCursor() {
+    cursor.style.left = mx + 'px';
+    cursor.style.top = my + 'px';
+    rx += (mx - rx) * 0.12;
+    ry += (my - ry) * 0.12;
+    ring.style.left = rx + 'px';
+    ring.style.top = ry + 'px';
+    requestAnimationFrame(animateCursor);
+  }
+  animateCursor();
+</script>
+
+</body>
+</html>
