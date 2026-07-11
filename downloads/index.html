@@ -109,40 +109,33 @@
     padding: 60px 80px;
   }
 
-  .download-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 28px 0;
-    border-bottom: 1px solid #141414;
-    gap: 20px;
+  .downloads-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 40px;
   }
 
-  .download-item:first-child {
-    border-top: 1px solid #141414;
+  .download-card img {
+    width: 100%;
+    display: block;
+    margin-bottom: 14px;
   }
 
-  .download-info {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
+  .download-artist {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    font-size: 13px;
+    color: var(--off-white);
+    margin-bottom: 3px;
   }
 
   .download-title {
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
     font-weight: 300;
-    font-size: 15px;
-    color: var(--off-white);
-    letter-spacing: 0.5px;
-  }
-
-  .download-meta {
-    font-family: 'Epilogue', sans-serif;
-    font-weight: 200;
-    font-size: 10px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
+    font-size: 13px;
     color: var(--dim);
+    margin-bottom: 14px;
   }
 
   .download-btn {
@@ -192,7 +185,7 @@
   @media (max-width: 768px) {
     .page-header { padding: 60px 32px 32px; }
     .downloads-list { padding: 40px 32px; }
-    .download-item { flex-direction: column; align-items: flex-start; gap: 16px; }
+    .downloads-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
     footer { padding: 32px; flex-direction: column; gap: 12px; text-align: center; }
     .cursor, .cursor-ring { display: none; }
     body { cursor: auto; }
@@ -207,23 +200,21 @@
 <header class="page-header">
   <a href="../" class="back-link">Mike Hamilton Music</a>
   <div class="page-title">Downloads</div>
-  <div class="page-subtitle">Free MP3s — no signup required</div>
 </header>
 
 <main class="downloads-list">
+  <div class="downloads-grid">
 
-  <!-- DOWNLOAD ITEMS — add new ones here -->
-
-  <!-- Example entry (uncomment and edit when adding a file):
-  <div class="download-item">
-    <div class="download-info">
-      <div class="download-title">Song Title</div>
-      <div class="download-meta">Artist Name &mdash; 2025</div>
+    <div class="download-card">
+      <img src="../images/a_deafening_sound_b3.png" alt="A Deafening Sound">
+      <div class="download-artist">Mike Hamilton</div>
+      <div class="download-title">Deafening Sound</div>
+      <a href="A Deafening Sound.mp3" download class="download-btn">Download MP3</a>
     </div>
-    <a href="files/filename.mp3" download class="download-btn">Download</a>
-  </div>
-  -->
 
+    <!-- Add new cards here -->
+
+  </div>
 </main>
 
 <footer>
