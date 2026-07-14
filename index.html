@@ -7,11 +7,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@100;200;300;800;900&family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Space+Mono:wght@400;700&family=DM+Sans:wght@200;300;400&family=Barlow+Condensed:wght@200;300&family=Josefin+Sans:wght@100;200;300&display=swap" rel="stylesheet">
 <style>
   :root {
-    --black: #080808;
+    --black: #0a0a0a;
     --off-white: #f0ece4;
     --mid: #333;
     --dim: #555;
-    --grain-opacity: 0.035;
+    --grain-opacity: 0.05;
+    --card-bg: #131313;
+    --border-subtle: rgba(255,255,255,0.08);
   }
 
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -135,14 +137,14 @@
   /* ── UPCOMING RELEASES ── */
   .upcoming {
     padding: 80px 80px 100px;
-    border-top: 1px solid #141414;
+    border-top: 1px solid var(--border-subtle);
   }
 
   .upcoming-label {
     font-family: 'Epilogue', sans-serif;
-    font-weight: 100;
-    font-size: clamp(22px, 3vw, 36px);
-    letter-spacing: clamp(6px, 1.5vw, 16px);
+    font-weight: 200;
+    font-size: clamp(24px, 3.2vw, 40px);
+    letter-spacing: clamp(8px, 2vw, 20px);
     color: var(--off-white);
     text-transform: uppercase;
     margin-bottom: 48px;
@@ -158,6 +160,10 @@
     display: flex;
     flex-direction: column;
     gap: 12px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-subtle);
+    border-radius: 3px;
+    padding: 12px;
   }
 
   .release-date {
@@ -174,6 +180,9 @@
     object-fit: cover;
     display: block;
     transition: opacity 0.3s ease;
+    border-radius: 2px;
+    border: 1px solid rgba(255,255,255,0.06);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.5);
   }
 
   .release-thumb:hover { opacity: 0.75; }
@@ -231,7 +240,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     min-height: 50vh;
-    border-top: 1px solid #141414;
+    border-top: 1px solid var(--border-subtle);
     cursor: none;
     overflow: hidden;
     position: relative;
@@ -400,7 +409,7 @@
     gap: 12px;
     text-decoration: none;
     padding: 14px 24px;
-    border: 1px solid #1a1a1a;
+    border: 1px solid rgba(255,255,255,0.1);
     color: #444;
     font-family: 'DM Sans', sans-serif;
     font-size: 10px;
@@ -451,7 +460,7 @@
     top: 15%;
     height: 70%;
     width: 1px;
-    background: #141414;
+    background: var(--border-subtle);
   }
 
   /* ── HOVER accent lines per alias ── */
@@ -472,7 +481,7 @@
 
   /* ── FOOTER ── */
   footer {
-    border-top: 1px solid #141414;
+    border-top: 1px solid var(--border-subtle);
     padding: 40px 80px;
     display: flex;
     justify-content: space-between;
