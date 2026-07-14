@@ -565,10 +565,14 @@
     .alias-card .accent-line { height: 48px; }
   }
 
-  /* Kit email form — scale down by 40% */
-  .formkit-form[data-uid="bedddedfce"] {
-    transform: scale(0.6);
-    transform-origin: top left;
+  /* Kit email form — fix clipped header on narrow mobile */
+  @media (max-width: 500px) {
+    .formkit-form[data-uid="6963c831be"] .formkit-column:first-of-type {
+      justify-content: center !important;
+      padding-bottom: 30px !important;
+      height: auto !important;
+      min-height: 260px !important;
+    }
   }
 </style>
 </head>
