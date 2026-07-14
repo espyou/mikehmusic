@@ -20,11 +20,13 @@ Served by GitHub Pages from the `main` branch. Goes live ~1-2 minutes after a pu
 - **Server script:** `~/mikehmusic_server.py`
 - **Start via:** `preview_start` tool using the `mikehmusic` config in `~/.claude/launch.json`
 - Serves from `/Users/michaelhamilton/sites/gtnb_website_build_2026/`
+- **If the preview panel breaks or shows a weird viewport**, use Chrome directly at `http://localhost:3456` — it's more reliable
+- **Kit email form and any other external CDN scripts will NOT render properly in the Claude preview panel** — always test those in a real browser (Chrome via the Chrome MCP tools)
 
 ## Workflow
 1. Mike describes a change
 2. Claude edits files in the working directory above
-3. Mike reviews in the preview panel at `localhost:3456`
+3. Mike reviews in the preview panel at `localhost:3456` (or Chrome for CDN-dependent features)
 4. Mike says "push" — Claude commits and pushes via SSH to `main`
 5. Live site updates automatically — no manual copying needed
 
@@ -34,3 +36,4 @@ Served by GitHub Pages from the `main` branch. Goes live ~1-2 minutes after a pu
 - Mike does not need to copy files anywhere — the working directory, preview, and repo are all connected
 - Do not commit `.DS_Store`, `.claude/`, or other system files
 - The `images/` subfolder holds all image assets — keep it that way
+- **When adding new images, always stage the image files explicitly alongside the HTML** — `git add index.html` alone will miss new image files, causing broken references on the live site
