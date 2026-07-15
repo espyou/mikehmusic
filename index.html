@@ -587,9 +587,9 @@
     }
   }
 
-  /* Kit slide-in — scale to viewport on partial-width desktop windows */
+  /* Kit slide-in — constrain to viewport, no overflow */
   .formkit-slide-in {
-    max-width: calc(100vw - 24px) !important;
+    max-width: 380px !important;
     max-height: calc(100vh - 24px) !important;
     overflow-y: auto !important;
     right: 12px !important;
@@ -601,7 +601,24 @@
     width: 100% !important;
     box-sizing: border-box !important;
   }
-  /* Keep close button inside the visible area */
+  /* Hide decorative background image — it stacks vertically and kills space */
+  .formkit-slide-in .formkit-background {
+    display: none !important;
+  }
+  /* Single-column layout since image is gone */
+  .formkit-slide-in [data-style="full"] {
+    display: block !important;
+  }
+  /* Compact the content column */
+  .formkit-slide-in .formkit-column {
+    padding: 20px !important;
+  }
+  .formkit-slide-in .formkit-header h2 {
+    font-size: 15px !important;
+    line-height: 1.4 !important;
+    margin: 0 0 12px !important;
+  }
+  /* Keep close button visible */
   .formkit-slide-in .formkit-close,
   .formkit-form[data-uid="bedddedfce"] + .formkit-close {
     position: sticky !important;
