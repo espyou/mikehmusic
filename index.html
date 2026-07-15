@@ -589,7 +589,7 @@
 
   /* Kit slide-in — constrain to viewport, no overflow */
   .formkit-slide-in {
-    max-width: 380px !important;
+    max-width: 480px !important;
     max-height: calc(100vh - 24px) !important;
     overflow-y: auto !important;
     right: 12px !important;
@@ -601,22 +601,31 @@
     width: 100% !important;
     box-sizing: border-box !important;
   }
-  /* Hide decorative background image — it stacks vertically and kills space */
-  .formkit-slide-in .formkit-background {
-    display: none !important;
-  }
-  /* Single-column layout since image is gone */
+  /* Force side-by-side: image stays but in a narrow column */
   .formkit-slide-in [data-style="full"] {
-    display: block !important;
+    display: grid !important;
+    grid-template-columns: 130px 1fr !important;
+  }
+  .formkit-slide-in .formkit-background {
+    min-height: 0 !important;
   }
   /* Compact the content column */
   .formkit-slide-in .formkit-column {
-    padding: 20px !important;
+    padding: 18px !important;
   }
   .formkit-slide-in .formkit-header h2 {
-    font-size: 15px !important;
+    font-size: 14px !important;
     line-height: 1.4 !important;
     margin: 0 0 12px !important;
+  }
+  /* Below 600px viewport width — drop the image entirely */
+  @media (max-width: 600px) {
+    .formkit-slide-in .formkit-background {
+      display: none !important;
+    }
+    .formkit-slide-in [data-style="full"] {
+      display: block !important;
+    }
   }
   /* Keep close button visible */
   .formkit-slide-in .formkit-close,
