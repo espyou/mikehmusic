@@ -586,6 +586,29 @@
       min-height: 260px !important;
     }
   }
+
+  /* Kit slide-in — scale to viewport on partial-width desktop windows */
+  .formkit-slide-in {
+    max-width: calc(100vw - 24px) !important;
+    max-height: calc(100vh - 24px) !important;
+    overflow-y: auto !important;
+    right: 12px !important;
+    bottom: 12px !important;
+    left: auto !important;
+  }
+  .formkit-form[data-uid="bedddedfce"] {
+    min-width: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  /* Keep close button inside the visible area */
+  .formkit-slide-in .formkit-close,
+  .formkit-form[data-uid="bedddedfce"] + .formkit-close {
+    position: sticky !important;
+    top: 0 !important;
+    right: 0 !important;
+    z-index: 9999 !important;
+  }
 </style>
 </head>
 <body>
