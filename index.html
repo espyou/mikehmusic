@@ -164,7 +164,11 @@
     border: 1px solid var(--border-subtle);
     border-radius: 3px;
     padding: 12px;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
   }
+  .release-card:hover .release-thumb { opacity: 0.75; }
 
   .release-date {
     font-family: 'DM Sans', sans-serif;
@@ -185,7 +189,6 @@
     box-shadow: 0 4px 16px rgba(0,0,0,0.5);
   }
 
-  .release-thumb:hover { opacity: 0.75; }
 
   .release-info {
     text-decoration: none;
@@ -605,82 +608,68 @@
   <div class="upcoming-label">Latest Releases</div>
   <div class="upcoming-grid">
 
-    <div class="release-card">
-      <div class="release-date">Fri May 29</div>
-      <a href="https://ffm.to/s2sstillness" target="_blank" rel="noopener">
-        <img src="images/stillness.gif" alt="Stillness is the Ultimate Luxury" class="release-thumb">
-      </a>
-      <a href="https://ffm.to/s2sstillness" target="_blank" rel="noopener" class="release-info">
-        <div class="release-artist">Soundtrack to Something</div>
-        <div class="release-title">Music from the Film "Stillness is the Ultimate Luxury"</div>
-      </a>
-    </div>
-
-    <div class="release-card">
-      <div class="release-date">Fri June 5</div>
-      <a href="https://ffm.to/mhclarity" target="_blank" rel="noopener">
-        <img src="images/clarity_option_a.png" alt="Clarity" class="release-thumb">
-      </a>
-      <a href="https://ffm.to/mhclarity" target="_blank" rel="noopener" class="release-info">
-        <div class="release-artist">Mike Hamilton feat. Will Cody</div>
-        <div class="release-title">Clarity</div>
-      </a>
-    </div>
-
-    <div class="release-card">
-      <div class="release-date">Fri June 12</div>
-      <a href="https://ffm.to/mhilym" target="_blank" rel="noopener">
-        <img src="images/ILYM_cover_v1_minimalist.jpg" alt="ILYM" class="release-thumb">
-      </a>
-      <a href="https://ffm.to/mhilym" target="_blank" rel="noopener" class="release-info">
-        <div class="release-artist">Mike Hamilton feat. Rowen + Eric Gibbons</div>
-        <div class="release-title">ILYM</div>
-      </a>
-    </div>
-
-    <div class="release-card">
-      <div class="release-date">Fri June 19</div>
-      <a href="https://ffm.to/terence" target="_blank" rel="noopener">
-        <img src="images/to_terence_cover.png" alt="To Terence" class="release-thumb">
-      </a>
-      <a href="https://ffm.to/terence" target="_blank" rel="noopener" class="release-info">
-        <div class="release-artist">Mike Hamilton</div>
-        <div class="release-title">To Terence</div>
-      </a>
-    </div>
-
-    <div class="release-card">
-      <div class="release-date">Fri July 3</div>
-      <a href="https://ffm.to/deafeningsound" target="_blank" rel="noopener">
-        <img src="images/a_deafening_sound_b3.png" alt="Deafening Sound" class="release-thumb">
-      </a>
-      <a href="https://ffm.to/deafeningsound" target="_blank" rel="noopener" class="release-info">
-        <div class="release-artist">Mike Hamilton (prod. by Andy Guarnera)</div>
-        <div class="release-title">Deafening Sound</div>
-      </a>
-    </div>
-
-    <div class="release-card">
-      <div class="release-date">Fri July 10</div>
-      <a href="https://ffm.to/mhyba" target="_blank" rel="noopener">
-        <img src="images/your_bad_advice_cover.png" alt="Your Bad Advice" class="release-thumb">
-      </a>
-      <a href="https://ffm.to/mhyba" target="_blank" rel="noopener" class="release-info">
-        <div class="release-artist">Mike Hamilton</div>
-        <div class="release-title">Your Bad Advice</div>
-      </a>
-    </div>
-
-    <div class="release-card">
+    <a class="release-card" href="https://soundcloud.com/vwlsnds/golden-vwlsnds-remix" target="_blank" rel="noopener">
       <div class="release-date">Sat Jul 11</div>
-      <a href="https://soundcloud.com/vwlsnds/golden-vwlsnds-remix" target="_blank" rel="noopener">
-        <img src="images/golden_option1_2000x2000.png" alt="Golden (VWLSNDS Remix)" class="release-thumb">
-      </a>
-      <a href="https://soundcloud.com/vwlsnds/golden-vwlsnds-remix" target="_blank" rel="noopener" class="release-info">
+      <img src="images/golden_option1_2000x2000.png" alt="Golden (VWLSNDS Remix)" class="release-thumb">
+      <div class="release-info">
         <div class="release-artist">VWLSNDS x Mike Hamilton</div>
         <div class="release-title">Golden (from KPop Demon Hunters) — VWLSNDS Remix</div>
-      </a>
-    </div>
+      </div>
+    </a>
+
+    <a class="release-card" href="https://ffm.to/mhyba" target="_blank" rel="noopener">
+      <div class="release-date">Fri July 10</div>
+      <img src="images/your_bad_advice_cover.png" alt="Your Bad Advice" class="release-thumb">
+      <div class="release-info">
+        <div class="release-artist">Mike Hamilton</div>
+        <div class="release-title">Your Bad Advice</div>
+      </div>
+    </a>
+
+    <a class="release-card" href="https://ffm.to/deafeningsound" target="_blank" rel="noopener">
+      <div class="release-date">Fri July 3</div>
+      <img src="images/a_deafening_sound_b3.png" alt="Deafening Sound" class="release-thumb">
+      <div class="release-info">
+        <div class="release-artist">Mike Hamilton (prod. by Andy Guarnera)</div>
+        <div class="release-title">Deafening Sound</div>
+      </div>
+    </a>
+
+    <a class="release-card" href="https://ffm.to/terence" target="_blank" rel="noopener">
+      <div class="release-date">Fri June 19</div>
+      <img src="images/to_terence_cover.png" alt="To Terence" class="release-thumb">
+      <div class="release-info">
+        <div class="release-artist">Mike Hamilton</div>
+        <div class="release-title">To Terence</div>
+      </div>
+    </a>
+
+    <a class="release-card" href="https://ffm.to/mhilym" target="_blank" rel="noopener">
+      <div class="release-date">Fri June 12</div>
+      <img src="images/ILYM_cover_v1_minimalist.jpg" alt="ILYM" class="release-thumb">
+      <div class="release-info">
+        <div class="release-artist">Mike Hamilton feat. Rowen + Eric Gibbons</div>
+        <div class="release-title">ILYM</div>
+      </div>
+    </a>
+
+    <a class="release-card" href="https://ffm.to/mhclarity" target="_blank" rel="noopener">
+      <div class="release-date">Fri June 5</div>
+      <img src="images/clarity_option_a.png" alt="Clarity" class="release-thumb">
+      <div class="release-info">
+        <div class="release-artist">Mike Hamilton feat. Will Cody</div>
+        <div class="release-title">Clarity</div>
+      </div>
+    </a>
+
+    <a class="release-card" href="https://ffm.to/s2sstillness" target="_blank" rel="noopener">
+      <div class="release-date">Fri May 29</div>
+      <img src="images/stillness.gif" alt="Stillness is the Ultimate Luxury" class="release-thumb">
+      <div class="release-info">
+        <div class="release-artist">Soundtrack to Something</div>
+        <div class="release-title">Music from the Film "Stillness is the Ultimate Luxury"</div>
+      </div>
+    </a>
 
   </div>
 </section>
